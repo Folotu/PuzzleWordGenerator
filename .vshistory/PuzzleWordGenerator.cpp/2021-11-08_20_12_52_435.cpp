@@ -19,7 +19,7 @@ int dy[] = { 0, 1, 1, 1, 0, -1, -1, -1 };
 
 
 
-int getIndex(char ch)
+void getIndex()
 {
 	return ch - 'a';
 }
@@ -87,39 +87,10 @@ bool comp(string a, string b)
 
 int main()
 {
-	preProcess();
+	
 
-	int code(1);
 
-	while (code)
-	{
-		foundWords.clear();
 
-		REP(i, 4) REP(j, 4)
-			cin >> inputArray[i][j];
 
-		REP(i, 4) REP(j, 4)
-		{
-			reset();
-			DepthfirstSearch(i, j, inputArray[i][j]);
-		}
-
-		cout << foundWords.size() << endl;
-		cout << endl << endl << "printing words" << endl;
-
-		vector<string> res;
-		for (string word : foundWords)
-			res.push_back(word);
-
-		sort(res.begin(), res.end(), comp);
-
-		for (string word : res)
-		{
-			cout << word << endl, res.pop_back();
-		}
-
-		cout << "enter 0 for exit" << endl;
-		cin >> code;
-	}
-		return 0;
+	return 0;
 }
